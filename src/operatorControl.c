@@ -68,8 +68,9 @@ void operatorControl()
     }
     loopCount = loopCount + 1;
     //Debuging:
-    printf("shoulder encoder at %f\n", encoderGet(shoulderEncoder));
-    printf("\n");
-    printf("elbow encoder at %f\n", encoderGet(elbowEncoder));
+    // printf("shoulder encoder at %f\n", encoderGet(shoulderEncoder));
+    // printf("\n");
+    // printf("elbow encoder at %f\n", encoderGet(elbowEncoder));
+    printf("untrasonic distance: %f\n\n", ultrasonicGet(sonar));
   }
 }

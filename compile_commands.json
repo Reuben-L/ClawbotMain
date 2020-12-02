@@ -24,7 +24,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/reube/AppData/Local/Temp/tmp0nxprg04/auto.c.o",
+            "bin/auto.c.o",
             "src\\auto.c"
         ],
         "directory": "C:\\Users\\reube\\Documents\\PROS\\ClawbotMain",
