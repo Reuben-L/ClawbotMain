@@ -5,37 +5,12 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/include",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/include-fixed",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include",
-            "-isystem./include",
-            "-iquote./include/./",
-            "-mthumb",
-            "-mcpu=cortex-m3",
-            "-mlittle-endian",
-            "-Os",
-            "-ffunction-sections",
-            "-fsigned-char",
-            "-fomit-frame-pointer",
-            "-fsingle-precision-constant",
-            "-fdiagnostics-color",
-            "-std=gnu99",
-            "-o",
-            "bin/auto.c.o",
-            "src/auto.c"
-        ],
-        "directory": "/Users/dirkwrightthe2nd/Documents/ClawbotMain_Ruben",
-        "file": "src/auto.c"
-    },
-    {
-        "arguments": [
-            "clang++",
-            "-c",
-            "-target",
-            "armv7ar-none-none-eabi",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/include",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/include-fixed",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include",
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\reube\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\reube\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\reube\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
             "-isystem./include",
             "-iquote./include/./",
             "-mthumb",
@@ -50,10 +25,10 @@
             "-std=gnu99",
             "-o",
             "bin/init.c.o",
-            "src/init.c"
+            "src\\init.c"
         ],
-        "directory": "/Users/dirkwrightthe2nd/Documents/ClawbotMain_Ruben",
-        "file": "src/init.c"
+        "directory": "C:\\Users\\reube\\Documents\\PROS\\ClawbotMain",
+        "file": "src\\init.c"
     },
     {
         "arguments": [
@@ -61,9 +36,12 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/include",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/include-fixed",
-            "-isystem/usr/local/Cellar/arm-gcc-bin/9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include",
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\reube\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\reube\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\reube\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
             "-isystem./include",
             "-iquote./include/./",
             "-mthumb",
@@ -78,9 +56,9 @@
             "-std=gnu99",
             "-o",
             "bin/operatorControl.c.o",
-            "src/operatorControl.c"
+            "src\\operatorControl.c"
         ],
-        "directory": "/Users/dirkwrightthe2nd/Documents/ClawbotMain_Ruben",
-        "file": "src/operatorControl.c"
+        "directory": "C:\\Users\\reube\\Documents\\PROS\\ClawbotMain",
+        "file": "src\\operatorControl.c"
     }
 ]

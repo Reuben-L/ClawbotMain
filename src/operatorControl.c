@@ -12,12 +12,12 @@ void operatorControl()
   int lastAngleShoulder = 0;
   int lastAngleElbow = 0;
 
-  //while (!joystickGetDigital(1, 8, JOY_LEFT))
-  //{
-    //printf("wating for da button \n");
-//  }
-  //zeroElbowSet(60);
-  //zeroShoulderSet(90);
+  while (!joystickGetDigital(1, 8, JOY_LEFT))
+  {
+    printf("wating for da button \n");
+ }
+  zeroElbowSet(60);
+  zeroShoulderSet(90);
 
   while (1)
   {
@@ -71,8 +71,22 @@ void operatorControl()
     // printf("shoulder encoder at %f\n", encoderGet(shoulderEncoder));
     // printf("\n");
     // printf("elbow encoder at %f\n", encoderGet(elbowEncoder));
-    printf("untrasonic distance: %d\n\n", ultrasonicGet(sonar));
+    int ultrasonic = ultrasonicGet(sonar);
+    printf("untrasonic distance: %f\n\n", ultrasonic);
 
-    delay(60);
+    delay(100);
+
+    if (ultrasonic > 20)
+    {
+      chassisSet(100, 100);
+    }
+    else if (ultrasonic < 15)
+    {
+      chassisSet(-100, -100);
+    }
+    else
+    {
+      chassisSet(0, 0);
+    }
   }
 }
