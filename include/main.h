@@ -29,7 +29,8 @@
 
 Encoder shoulderEncoder;
 Encoder elbowEncoder;
-Ultrasonic sonar;
+Ultrasonic sonarRight;
+Ultrasonic sonarLeft;
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
 extern "C" {

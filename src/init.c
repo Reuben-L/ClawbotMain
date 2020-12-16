@@ -17,5 +17,9 @@ void initializeIO() {
 void initialize() {
   shoulderEncoder = encoderInit(8, 9, false);
   elbowEncoder = encoderInit(7, 6, false);
-  sonar = ultrasonicInit(2, 1);
+  sonarRight = ultrasonicInit(1, 2);
+  sonarLeft = ultrasonicInit(11, 12);
+  analogCalibrate(1);
+  analogCalibrate(2);
+  analogCalibrate(3);
 }

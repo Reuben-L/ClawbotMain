@@ -1,5 +1,6 @@
 #ifndef _CHASSIS_H_
 #define _CHASSIS_H_
+#include "main.h"
 
 // Sets the speeds of the left and right wheels of the chassis
 

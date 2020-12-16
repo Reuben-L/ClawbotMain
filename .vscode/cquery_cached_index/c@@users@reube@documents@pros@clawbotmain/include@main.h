@@ -28,6 +28,9 @@
 #include <API.h>
 
 Encoder shoulderEncoder;
+Encoder elbowEncoder;
+Ultrasonic sonarRight;
+Ultrasonic sonarLeft;
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
 extern "C" {

@@ -6,7 +6,7 @@
 
 void chassisSet(int left, int right) {
   motorSet(6, left);
-  motorSet(7, right);
+  motorSet(7, -right);
 }
 
 #endif // _CHASSIS_H_

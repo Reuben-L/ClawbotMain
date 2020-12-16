@@ -5,28 +5,55 @@
 #include "elbow.h"
 #include "zeroShoulder.h"
 #include "setJoint.h"
+#include "ultrasonic.h"
+#include "linefollow.h"
 
 void operatorControl()
 {
   int loopCount = 0; //just a loop counter
   int lastAngleShoulder = 0;
   int lastAngleElbow = 0;
+  int controlMode = 0; //0 is manuel control, 1 is ultrasonic control, 2 is line follow control
 
   while (!joystickGetDigital(1, 8, JOY_LEFT))
   {
     printf("wating for da button \n");
- }
+  }
   zeroElbowSet(60);
   zeroShoulderSet(90);
 
   while (1)
   {
+    if (joystickGetDigital(1, 8, JOY_UP))
+    {
+      controlMode = 0;
+    }
+    else if (joystickGetDigital(1, 8, JOY_RIGHT))
+    {
+      controlMode = 1;
+    }
+    else if (joystickGetDigital(1, 8, JOY_DOWN))
+    {
+      controlMode = 2;
+    }
+    
     int power, turn;
 
-    //drive base control
-    power = joystickGetAnalog(1, 1); // vertical axis on left joystick
-    turn = joystickGetAnalog(1, 2);  // horizontal axis on left joystick
-    chassisSet(power + turn, power - turn);
+    if (controlMode == 0)
+    {
+      //drive base control
+      power = joystickGetAnalog(1, 2); // vertical axis on left joystick
+      turn = joystickGetAnalog(1, 1);  // horizontal axis on left joystick
+      chassisSet(power + turn, power - turn);
+    }
+    else if (controlMode = 1) 
+    {
+      follow1D();
+    }
+    else if (controlMode = 2) 
+    {
+      linefollow();
+    }
 
     // controll claw with CH4 of joystick
     clawSet(joystickGetAnalog(1, 4));
@@ -71,22 +98,5 @@ void operatorControl()
     // printf("shoulder encoder at %f\n", encoderGet(shoulderEncoder));
     // printf("\n");
     // printf("elbow encoder at %f\n", encoderGet(elbowEncoder));
-    int ultrasonic = ultrasonicGet(sonar);
-    printf("untrasonic distance: %f\n\n", ultrasonic);
-
-    delay(100);
-
-    if (ultrasonic > 20)
-    {
-      chassisSet(100, 100);
-    }
-    else if (ultrasonic < 15)
-    {
-      chassisSet(-100, -100);
-    }
-    else
-    {
-      chassisSet(0, 0);
-    }
   }
 }

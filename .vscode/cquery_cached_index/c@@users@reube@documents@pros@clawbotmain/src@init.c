@@ -1,12 +1,3 @@
-/** @file init.c
- * @brief File for initialization code
- *
- * This file should contain the user initialize() function and any functions related to it.
- *
- * PROS contains FreeRTOS (http://www.freertos.org) whose source code may be
- * obtained from http://sourceforge.net/projects/freertos/files/ or on request.
- */
-
 #include "main.h"
 
 /*
@@ -18,22 +9,17 @@
  * configure a UART port (usartOpen()) but cannot set up an LCD (lcdInit()).
  */
 void initializeIO() {
-  pinMode(6, INPUT);
+  pinMode(5, INPUT);
+  pinMode(3, INPUT);
 }
 
-/*
- * Runs user initialization code. This function will be started in its own task with the default
- * priority and stack size once when the robot is starting up. It is possible that the VEXnet
- * communication link may not be fully established at this time, so reading from the VEX
- * Joystick may fail.
- *
- * This function should initialize most sensors (gyro, encoders, ultrasonics), LCDs, global
- * variables, and IMEs.
- *
- * This function must exit relatively promptly, or the operatorControl() and autonomous() tasks
- * will not start. An autonomous mode selection menu like the pre_auton() in other environments
- * can be implemented in this task if desired.
- */
+
 void initialize() {
   shoulderEncoder = encoderInit(8, 9, false);
+  elbowEncoder = encoderInit(7, 6, false);
+  sonarRight = ultrasonicInit(1, 2);
+  sonarLeft = ultrasonicInit(11, 12);
+  analogCalibrate(1);
+  analogCalibrate(2);
+  analogCalibrate(3);
 }

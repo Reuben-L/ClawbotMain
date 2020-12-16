@@ -3,32 +3,23 @@
 #ifndef _SETJOINT_H_
 #define _SETJOINT_H_
 
-int encoderError = 2;
-bool shoulderReleased = true;
+// int Kp = 1;
+// int MAX_OUT = 127;
+// int error;
+// int output;
 
-void setShoulderPos(int degrees)
-{
-  shoulderReleased = false;
-  while (!shoulderReleased)
-  {
-    if (encoderGet(shoulderEncoder) > encoderError + degrees)
-    {
-      while (encoderGet(shoulderEncoder) > encoderError + degrees)
-      {
-        shoulderSet(-60);
-      }
-    }
-    else if (encoderGet(shoulderEncoder) < degrees - encoderError)
-    {
-      while (encoderGet(shoulderEncoder) < degrees - encoderError)
-      {
-        shoulderSet(60);
-      }
-    }
-    else
-    {
-      shoulderSet(0);
-    }
-  }
-}
+// void setShoulderPos(int TARGET)
+// {
+//   error = TARGET - encoderGet(shoulderEncoder);
+//   output = Kp * error;
+//   if (abs(error) < MAX_OUT)
+//   {
+//     shoulderSet(output);
+//   }
+//   else
+//   {
+//     shoulderSet(output / abs(output) * MAX_OUT);
+//   }
+// }
+
 #endif
