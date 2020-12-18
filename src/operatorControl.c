@@ -17,7 +17,6 @@ void operatorControl()
 
   while (!joystickGetDigital(1, 8, JOY_LEFT))
   {
-    printf("wating for da button \n");
   }
   zeroElbowSet(60);
   zeroShoulderSet(90);
@@ -27,16 +26,19 @@ void operatorControl()
     if (joystickGetDigital(1, 8, JOY_UP))
     {
       controlMode = 0;
+      printf("control mode: %d\n", controlMode);
     }
     else if (joystickGetDigital(1, 8, JOY_RIGHT))
     {
       controlMode = 1;
+      printf("control mode: %d\n", controlMode);
     }
     else if (joystickGetDigital(1, 8, JOY_DOWN))
     {
       controlMode = 2;
+      printf("control mode: %d\n", controlMode);
     }
-    
+
     int power, turn;
 
     if (controlMode == 0)
@@ -46,13 +48,21 @@ void operatorControl()
       turn = joystickGetAnalog(1, 1);  // horizontal axis on left joystick
       chassisSet(power + turn, power - turn);
     }
-    else if (controlMode = 1) 
+    else if (controlMode = 1)
     {
-      follow1D();
+      follow2D();
     }
-    else if (controlMode = 2) 
+    else if (controlMode = 2)
     {
       linefollow();
+      int LineLeft = analogReadCalibrated(1);
+      int LineCenter = analogReadCalibrated(2);
+      int LineRight = analogReadCalibrated(3);
+
+      //Print values out for debugging
+      printf("Line left: %d\n\n", LineLeft);
+      printf("Line center left: %d\n\n", LineCenter);
+      printf("Line right: %d\n\n", LineRight);
     }
 
     // controll claw with CH4 of joystick
