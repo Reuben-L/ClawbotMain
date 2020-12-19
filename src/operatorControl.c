@@ -7,6 +7,7 @@
 #include "setJoint.h"
 #include "ultrasonic.h"
 #include "linefollow.h"
+#include "wrist.h"
 
 void operatorControl()
 {
@@ -23,6 +24,7 @@ void operatorControl()
 
   while (1)
   {
+    delay(50);
     if (joystickGetDigital(1, 8, JOY_UP))
     {
       controlMode = 0;
@@ -48,25 +50,18 @@ void operatorControl()
       turn = joystickGetAnalog(1, 1);  // horizontal axis on left joystick
       chassisSet(power + turn, power - turn);
     }
-    else if (controlMode = 1)
+    else if (controlMode == 1)
     {
       follow2D();
     }
-    else if (controlMode = 2)
+    else if (controlMode == 2)
     {
       linefollow();
-      int LineLeft = analogReadCalibrated(1);
-      int LineCenter = analogReadCalibrated(2);
-      int LineRight = analogReadCalibrated(3);
-
-      //Print values out for debugging
-      printf("Line left: %d\n\n", LineLeft);
-      printf("Line center left: %d\n\n", LineCenter);
-      printf("Line right: %d\n\n", LineRight);
     }
+    wristSet(joystickGetAnalog(1, 4));
 
     // controll claw with CH4 of joystick
-    clawSet(joystickGetAnalog(1, 4));
+    clawSet(joystickGetAnalog(1, 3));
 
     // control shoulder motor with button 6U and 6D
     if (joystickGetDigital(1, 6, JOY_UP))
