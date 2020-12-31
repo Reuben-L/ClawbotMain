@@ -1,11 +1,11 @@
 {
     "py/object": "pros.conductor.project.Project",
     "py/state": {
-        "project_name": "ClawbotExample",
+        "project_name": "include",
         "target": "cortex",
         "templates": {
             "kernel": {
-                "location": "/Users/dirkwrightthe2nd/Library/Application Support/PROS/templates/kernel@2.12.2",
+                "location": "C:\\Users\\Admin\\AppData\\Roaming\\PROS\\templates\\kernel@2.12.2",
                 "metadata": {
                     "origin": "pros-mainline",
                     "output": "bin/output.bin"
